@@ -1,0 +1,44 @@
+﻿@model Anedotas.Models.AnedotaModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contexto" class="control-label"></label>
+                <input asp-for="Contexto" class="form-control" />
+                <span asp-validation-for="Contexto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContextoResposta" class="control-label"></label>
+                <input asp-for="ContextoResposta" class="form-control" />
+                <span asp-validation-for="ContextoResposta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar à lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
